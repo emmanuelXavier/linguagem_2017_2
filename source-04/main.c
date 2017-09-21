@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	
 	printf("\n\nListando\n\n");	
 	for (i = 2; i < 50;i += 2)
-			printf("%d. Emmanuel é bonito\n",i);
+			printf("%d. Emmanuel é bonito demais\n",i);
 
 
 

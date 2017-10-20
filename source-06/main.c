@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 int opcao;
 
 void mostrarMenu(){
@@ -25,6 +26,7 @@ int main(int argc, char **argv)
 	printf("O retorno foi %d",res);
 
 	scanf("%d",&opcao);
+
 	return 0;
 }
 

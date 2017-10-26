@@ -1,32 +1,28 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 
-int opcao;
+#define SAIR_SUCESSO 0
+#define SAIR_FALHA 1
 
-void mostrarMenu(){
-	int opcao = 0;
-	printf("Menu do programa\n1. Cadastrar produtos\n2.Alterar o estoque\n3.Baixar estoque\nSelecione uma das opcoes acima: %d",opcao);
+float calcularJuros(float parcela, int qtdDias, float juros){
+	if ((juros < 0) || (parcela <= 0) || (qtdDias < 0))
+		return -1;
+		
+	float valorJuros = parcela * (qtdDias * juros)/100;
+	return valorJuros;
 }
-
-int mostrarMenu2(){
-	int opcao;
-	printf("Menu do programa\n1. Cadastrar produtos\n2.Alterar o estoque\n3.Baixar estoque\n4.Sair\nSelecione uma das opcoes acima: ");
-	scanf("%d",&opcao);
-	return opcao;
-}
-
-
-
 
 int main(int argc, char **argv)
-{
-	int res; 
-	res = mostrarMenu2();	
+{	
 	
-	printf("O retorno foi %d",res);
+	float j = calcularJuros(1400,4,20);
+	if (j == -1)
+		printf("Dados invalidos");
+	else
+		printf("Juros da parcela: %.2f",j);
 
-	scanf("%d",&opcao);
 
-	return 0;
+	return SAIR_SUCESSO;
 }
 
